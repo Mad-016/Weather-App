@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.weather-app {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1.5px solid #4092d3;
+  border-radius: 5px;
+}
+
+.weather-app-today {
+  border: 1.5px solid #f2f3f5;
+  border-radius: 5px;
+  background-color: #f8fdfe;
+}
+
+h1 {
+  color: #4092d3;
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 28px;
+  margin-bottom: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
