@@ -4,8 +4,8 @@ body {
 }
 h1 {
   color: #4092d3;
-  font-size: 30px;
-  font-weight: 500;
+  font-size: 40px;
+  font-weight: 400;
   line-height: 28px;
   margin-bottom: 0;
 }
@@ -41,11 +41,18 @@ a {
   background-color: #f8fdfe;
 }
 
-.todays-temp {
+#todays-temp {
   color: #4092d3;
   font-size: 55px;
+  line-height: 1;
+}
+#description {
+  color: #4092d3;
+  font-size: 24px;
+  text-transform: capitalize;
 }
 .weather-app-today .units {
+  color: #4092d3;
   position: relative;
   font-size: 16px;
   top: -30px;
