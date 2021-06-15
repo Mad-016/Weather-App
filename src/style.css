@@ -1,25 +1,11 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
 }
-
-.weather-app {
-  max-width: 600px;
-  margin: 30px auto;
-  padding: 20px;
-  border: 1.5px solid #4092d3;
-  border-radius: 5px;
-}
-
-.weather-app-today {
-  border: 1.5px solid #f2f3f5;
-  border-radius: 5px;
-  background-color: #f8fdfe;
-}
-
 h1 {
   color: #4092d3;
-  font-size: 24px;
-  font-weight: 100;
+  font-size: 30px;
+  font-weight: 500;
   line-height: 28px;
   margin-bottom: 0;
 }
@@ -27,4 +13,40 @@ h1 {
 p {
   margin: 0;
   padding: 0;
+}
+small {
+  font-size: 10px;
+}
+a {
+  color: #2f72a8;
+}
+.weather-app-today img {
+  width: 200px;
+}
+.weather-app-wrapper {
+  max-width: 500px;
+  margin: 30px auto;
+}
+
+.weather-app {
+  padding: 20px;
+  border: 1.5px solid #4092d3;
+  border-radius: 5px;
+}
+
+.weather-app-today {
+  padding: 20px;
+  border: 1.5px solid #f2f3f5;
+  border-radius: 5px;
+  background-color: #f8fdfe;
+}
+
+.todays-temp {
+  color: #4092d3;
+  font-size: 55px;
+}
+.weather-app-today .units {
+  position: relative;
+  font-size: 16px;
+  top: -30px;
 }
