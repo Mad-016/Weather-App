@@ -46,11 +46,16 @@ a {
   font-size: 55px;
   line-height: 1;
 }
+
 #description {
   color: #4092d3;
   font-size: 24px;
+}
+
+#description::first-letter {
   text-transform: capitalize;
 }
+
 .weather-app-today .units {
   color: #4092d3;
   position: relative;
