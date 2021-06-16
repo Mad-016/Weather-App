@@ -63,3 +63,13 @@ a {
   font-size: 16px;
   top: -30px;
 }
+
+.weather-app-today .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+.weather-app-today .active:hover {
+  text-decoration: none;
+}
