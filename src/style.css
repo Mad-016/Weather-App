@@ -4,7 +4,7 @@ body {
   background-color: #cec1b4;
 }
 h1 {
-  color: #4092d3;
+  color: #b79a80;
   font-size: 40px;
   font-weight: 400;
   line-height: 28px;
@@ -19,19 +19,19 @@ small {
   font-size: 10px;
 }
 a {
-  color: #2f72a8;
+  color: #b79a80;
 }
 .weather-app-today img {
   width: 200px;
 }
 .weather-app-wrapper {
-  max-width: 500px;
+  max-width: 550px;
   margin: 30px auto;
 }
 
 .weather-app {
   padding: 20px;
-  border: 1.5px solid #4092d3;
+  border: 2px solid #c0d4e7;
   border-radius: 5px;
 }
 
@@ -39,21 +39,30 @@ a {
   padding: 20px;
   border: 1.5px solid #f2f3f5;
   border-radius: 5px;
-  background-color: #c0d4e7;
+  background-color: #f2f3f5;
+}
+
+#country {
+  padding: 0;
+  margin-top: 5px;
+  margin-bottom: 20px;
 }
 
 #icon {
   max-height: 200px;
+  border: 1.5px solid #f2f3f5;
+  border-radius: 10px;
+  background-color: #c0d4e7;
 }
 
 #todays-temp {
-  color: #4092d3;
+  color: #b79a80;
   font-size: 55px;
   line-height: 1;
 }
 
 #description {
-  color: #4092d3;
+  color: #b79a80;
   font-size: 24px;
 }
 
