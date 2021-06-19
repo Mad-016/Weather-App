@@ -39,7 +39,11 @@ a {
   padding: 20px;
   border: 1.5px solid #f2f3f5;
   border-radius: 5px;
-  background-color: #f8fdfe;
+  background-color: #c0d4e7;
+}
+
+#icon {
+  max-height: 200px;
 }
 
 #todays-temp {
