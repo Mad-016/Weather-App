@@ -34,12 +34,14 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#icon");
 
   celsiusTemperature = response.data.main.temp;
+  celsiusTemperatureMin = response.data.main.temp_min;
+  celsiusTemperatureMax = response.data.main.temp_max;
 
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.name;
   countryElement.innerHTML = response.data.sys.country;
-  minElement.innerHTML = Math.round(response.data.main.temp_min);
-  maxElement.innerHTML = Math.round(response.data.main.temp_max);
+  minElement.innerHTML = Math.round(celsiusTemperatureMin);
+  maxElement.innerHTML = Math.round(celsiusTemperatureMax);
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(3.6 * response.data.wind.speed);
@@ -66,22 +68,33 @@ function handleSubmit(event) {
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#todays-temp");
+  let temperatureElementMin = document.querySelector("#min-temp");
+  let temperatureElementMax = document.querySelector("#max-temp");
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-
+  let fahrenheitTemperatureMin = (celsiusTemperatureMin * 9) / 5 + 32;
+  let fahrenheitTemperatureMax = (celsiusTemperatureMax * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  temperatureElementMin.innerHTML = Math.round(fahrenheitTemperatureMin);
+  temperatureElementMax.innerHTML = Math.round(fahrenheitTemperatureMax);
 }
 
 function displayCelsiusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#todays-temp");
+  let temperatureElementMin = document.querySelector("#min-temp");
+  let temperatureElementMax = document.querySelector("#max-temp");
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  temperatureElementMin.innerHTML = Math.round(celsiusTemperatureMin);
+  temperatureElementMax.innerHTML = Math.round(celsiusTemperatureMax);
 }
 
 let celsiusTemperature = null;
+let celsiusTemperatureMin = null;
+let celsiusTemperatureMax = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
@@ -92,4 +105,4 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-search("New York");
+search("Brisbane");
