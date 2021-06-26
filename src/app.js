@@ -62,9 +62,7 @@ function displayForecast(response) {
                   </div>
                   <div class="col-4">
                     <img
-                      src="http://openweathermap.org/img/wn/${
-                        forecastDay.weather[0].icon
-                      }@2x.png"
+                      src="images/${forecastDay.weather[0].icon}.png"
                       class="img-fluid rounded-start"
                       alt="..."
                       width="50"
