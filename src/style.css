@@ -60,6 +60,9 @@ a {
   font-size: 55px;
   line-height: 1;
 }
+#max-temp {
+  font-weight: 600;
+}
 
 #description {
   color: #b79a80;
@@ -89,4 +92,17 @@ a {
 
 .card-body {
   padding: 10px;
+}
+
+.weather-forecast-temp-max {
+  font-weight: 600;
+}
+
+.card.mb-2 {
+  background-color: #cec1b4;
+  border-color: #c0d4e7;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0px;
 }
