@@ -21,6 +21,39 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = "";
+  let days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="card mb-2" style="max-width: 540px">
+  <div class="row g-0">
+                  <div class="col-8">
+                    <div class="card-body">
+                      <p class="card-text">${day}</p>
+                      <p class="card-text">
+                        <span class="weather-forecast-temp-min">13</span>º |
+                        <span class="weather-forecast-temp-max">25</span>º
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <img
+                      src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
+                      class="img-fluid rounded-start"
+                      alt="..."
+                      width="50"
+                    />
+                  </div>
+                </div>
+                </div>`;
+  });
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#todays-temp");
   let cityElement = document.querySelector("#city");
@@ -106,3 +139,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Brisbane");
+displayForecast();
