@@ -41,7 +41,6 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = "";
-  let days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday"];
   forecast.forEach(function (forecastDay, index) {
     if (index >= 1 && index <= 5) {
       forecastHTML =
