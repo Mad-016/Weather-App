@@ -44,7 +44,7 @@ a:hover {
   padding: 20px;
   border: 2px solid #c0d4e7;
   border-radius: 5px;
-  box-shadow: 3px 3px 5px #ad947d;
+  box-shadow: 5px 5px 15px #ad947d;
 }
 
 .weather-app-today {
