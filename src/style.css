@@ -1,10 +1,10 @@
 body {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
-  background-color: #b4a79a;
+  background-color: #beb2a6;
 }
 h1 {
-  color: #b79a80;
+  color: #ad947d;
   font-size: 40px;
   font-weight: 400;
   line-height: 28px;
@@ -16,11 +16,22 @@ p {
   padding: 0;
 }
 small {
-  font-size: 12px;
+  font-size: 11px;
 }
 a {
-  color: #858f86;
+  color: black;
 }
+a:hover {
+  color: #c0d4e7;
+}
+
+.col-10 {
+  padding-right: 6px;
+}
+.col-1 {
+  padding-left: 0px;
+}
+
 .weather-app-today img {
   width: 200px;
 }
@@ -33,6 +44,7 @@ a {
   padding: 20px;
   border: 2px solid #c0d4e7;
   border-radius: 5px;
+  box-shadow: 3px 3px 5px #ad947d;
 }
 
 .weather-app-today {
@@ -40,7 +52,7 @@ a {
   border: 1.5px solid #f2f3f5;
   border-radius: 5px;
   background-color: #f2f3f5;
-  box-shadow: 3px 3px 5px #b0adae;
+  box-shadow: 3px 3px 5px #ad947d;
 }
 
 #country {
@@ -57,7 +69,7 @@ a {
 }
 
 #todays-temp {
-  color: #b79a80;
+  color: #ad947d;
   font-size: 55px;
   line-height: 1;
 }
@@ -66,7 +78,7 @@ a {
 }
 
 #description {
-  color: #b79a80;
+  color: #ad947d;
   font-size: 20px;
   font-weight: 500;
 }
@@ -78,11 +90,10 @@ a {
 .weather-app-today .units {
   position: relative;
   font-size: 16px;
-  top: -30px;
 }
 
 .weather-app-today .active {
-  color: #b79a80;
+  color: #ad947d;
   cursor: default;
   text-decoration: none;
   font-weight: 500;
@@ -102,18 +113,24 @@ a {
 
 #forecast-card {
   background-color: transparent;
-  border-color: #f2f3f5;
+  border: 0;
   border-top: 0;
   border-right: 0;
   border-left: 0;
-  border-radius: 0px;
+  border-end-end-radius: 30px;
+  box-shadow: 3px 3px 5px #ad947d;
 }
 #search-icon {
+  color: #6c757d;
+}
+#here-icon {
   color: #6c757d;
 }
 .btn {
   line-height: 0.75;
   width: 100%;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 
 .card-text {

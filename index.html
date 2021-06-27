@@ -41,10 +41,17 @@
                       autocomplete="off"
                     />
                   </div>
-                  <div class="col-2">
+                  <div class="col-1">
                     <button type="submit" class="btn btn-light">
                       <span class="material-icons md-24" id="search-icon"
                         >search</span
+                      >
+                    </button>
+                  </div>
+                  <div class="col-1">
+                    <button type="submit" class="btn btn-light" id="here">
+                      <span class="material-icons md-24" id="here-icon"
+                        >room</span
                       >
                     </button>
                   </div>
@@ -62,9 +69,9 @@
                       <span id="min-temp"></span>º |
                       <span id="max-temp"></span>º
                     </p>
-                    <p>
-                      <span id="todays-temp"></span>
-                      <span class="units">
+                    <p class="row">
+                      <span class="col-4" id="todays-temp"></span>
+                      <span class="col-6 units">
                         <a href="#" id="celsius-link" class="active">ºC</a>
                         <a href="#" id="fahrenheit-link">ºF</a></span
                       >
@@ -84,10 +91,12 @@
             </div>
           </div>
           <small>
+            Coded by Madeline Hardy.
             <a href="https://github.com/Mad-016/Weather-App" target="_blank"
               >Open-source code</a
             >
-            by Madeline Hardy
+            available. Learnt through
+            <a href="https://www.shecodes.io/" target="_blank">SheCodes</a>.
           </small>
         </div>
       </div>

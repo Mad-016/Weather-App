@@ -107,7 +107,7 @@ function displayTemperature(response) {
   ) {
     document.getElementById("icon").style.backgroundColor = "#c0d4e7";
     document.getElementById("weather-app").style.border = "2px solid #c0d4e7";
-    document.getElementById("body").style.backgroundColor = "#cec1b4";
+    document.getElementById("body").style.backgroundColor = "#beb2a6";
   } else {
     document.getElementById("icon").style.backgroundColor = "#858F86";
     document.getElementById("weather-app").style.border = "2px solid #858F86";
@@ -143,6 +143,19 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
+function retrievePosition(position) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  axios.get(url).then(displayTemperature);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(retrievePosition);
+}
+
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   celsiusLink.classList.remove("active");
@@ -164,6 +177,9 @@ function displayCelsiusTemperature(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let here = document.querySelector("#here");
+here.addEventListener("click", getCurrentLocation);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
