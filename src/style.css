@@ -100,9 +100,9 @@ a {
   font-weight: 600;
 }
 
-.card.mb-2 {
+#forecast-card {
   background-color: transparent;
-  border-color: #c0d4e7;
+  border-color: #f2f3f5;
   border-top: 0;
   border-right: 0;
   border-left: 0;

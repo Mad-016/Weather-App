@@ -45,7 +45,7 @@ function displayForecast(response) {
     if (index >= 1 && index <= 5) {
       forecastHTML =
         forecastHTML +
-        `<div class="card mb-2" style="max-width: 540px">
+        `<div class="card mb-2" style="max-width: 540px" id="forecast-card">
   <div class="row g-0">
                   <div class="col-8">
                     <div class="card-body">
@@ -96,6 +96,19 @@ function displayTemperature(response) {
   celsiusTemperature = response.data.main.temp;
   celsiusTemperatureMin = response.data.main.temp_min;
   celsiusTemperatureMax = response.data.main.temp_max;
+
+  if (
+    response.data.sys.sunrise <= response.data.dt &&
+    response.data.sys.sunset >= response.data.dt
+  ) {
+    console.log("day");
+    document.getElementById("icon").style.backgroundColor = "#c0d4e7";
+    document.getElementById("weather-app").style.border = "2px solid #c0d4e7";
+  } else {
+    console.log("night");
+    document.getElementById("icon").style.backgroundColor = "#858F86";
+    document.getElementById("weather-app").style.border = "2px solid #858F86";
+  }
 
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.name;
