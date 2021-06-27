@@ -108,3 +108,9 @@ a {
   border-left: 0;
   border-radius: 0px;
 }
+#search-icon {
+  color: #6c757d;
+}
+.btn {
+  line-height: 0.75;
+}
