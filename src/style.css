@@ -1,7 +1,7 @@
 body {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
-  background-color: #cec1b4;
+  background-color: #b4a79a;
 }
 h1 {
   color: #b79a80;
@@ -16,10 +16,10 @@ p {
   padding: 0;
 }
 small {
-  font-size: 10px;
+  font-size: 12px;
 }
 a {
-  color: #4274a3;
+  color: #858f86;
 }
 .weather-app-today img {
   width: 200px;
@@ -76,16 +76,16 @@ a {
 }
 
 .weather-app-today .units {
-  color: #4092d3;
   position: relative;
   font-size: 16px;
   top: -30px;
 }
 
 .weather-app-today .active {
-  color: black;
+  color: #b79a80;
   cursor: default;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .weather-app-today .active:hover {
@@ -97,7 +97,7 @@ a {
 }
 
 .weather-forecast-temp-max {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 #forecast-card {
@@ -113,4 +113,15 @@ a {
 }
 .btn {
   line-height: 0.75;
+  width: 100%;
+}
+
+.card-text {
+  color: #f2f3f5;
+  font-weight: 200;
+}
+
+.img-fluid {
+  height: 10;
+  padding-top: 5px;
 }

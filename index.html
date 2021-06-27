@@ -24,7 +24,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Weather App</title>
   </head>
-  <body>
+  <body id="body">
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app" id="weather-app">
@@ -71,7 +71,10 @@
                     </p>
                     <p id="description"></p>
                     <p>Humidity: <span id="humidity"></span>%</p>
-                    <p>Wind: <span id="wind"></span>km/h</p>
+                    <p>
+                      Wind: <span id="wind"></span
+                      ><span id="wind-units"> m/s</span>
+                    </p>
                   </div>
                 </div>
               </div>

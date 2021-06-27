@@ -1,3 +1,7 @@
+let apiKey = "82f33736fe5d08022fb7076137f7ac18";
+let units = "metric";
+let windUnits = document.querySelector("#wind-units");
+
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -76,12 +80,12 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  let apiKey = "82f33736fe5d08022fb7076137f7ac18";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
+  currentCityName = response.data.name;
   let temperatureElement = document.querySelector("#todays-temp");
   let cityElement = document.querySelector("#city");
   let countryElement = document.querySelector("#country");
@@ -101,13 +105,13 @@ function displayTemperature(response) {
     response.data.sys.sunrise <= response.data.dt &&
     response.data.sys.sunset >= response.data.dt
   ) {
-    console.log("day");
     document.getElementById("icon").style.backgroundColor = "#c0d4e7";
     document.getElementById("weather-app").style.border = "2px solid #c0d4e7";
+    document.getElementById("body").style.backgroundColor = "#cec1b4";
   } else {
-    console.log("night");
     document.getElementById("icon").style.backgroundColor = "#858F86";
     document.getElementById("weather-app").style.border = "2px solid #858F86";
+    document.getElementById("body").style.backgroundColor = "#b4a79a";
   }
 
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
@@ -117,7 +121,7 @@ function displayTemperature(response) {
   maxElement.innerHTML = Math.round(celsiusTemperatureMax);
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
-  windElement.innerHTML = Math.round(3.6 * response.data.wind.speed);
+  windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
@@ -129,8 +133,7 @@ function displayTemperature(response) {
 }
 
 function search(city) {
-  let apiKey = "82f33736fe5d08022fb7076137f7ac18";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayTemperature);
 }
 
@@ -142,34 +145,22 @@ function handleSubmit(event) {
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#todays-temp");
-  let temperatureElementMin = document.querySelector("#min-temp");
-  let temperatureElementMax = document.querySelector("#max-temp");
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  let fahrenheitTemperatureMin = (celsiusTemperatureMin * 9) / 5 + 32;
-  let fahrenheitTemperatureMax = (celsiusTemperatureMax * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-  temperatureElementMin.innerHTML = Math.round(fahrenheitTemperatureMin);
-  temperatureElementMax.innerHTML = Math.round(fahrenheitTemperatureMax);
+  units = "imperial";
+  windUnits.innerHTML = " mph";
+  search(currentCityName);
 }
 
 function displayCelsiusTemperature(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#todays-temp");
-  let temperatureElementMin = document.querySelector("#min-temp");
-  let temperatureElementMax = document.querySelector("#max-temp");
+
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  temperatureElementMin.innerHTML = Math.round(celsiusTemperatureMin);
-  temperatureElementMax.innerHTML = Math.round(celsiusTemperatureMax);
+  units = "metric";
+  windUnits.innerHTML = " m/s";
+  search(currentCityName);
 }
-
-let celsiusTemperature = null;
-let celsiusTemperatureMin = null;
-let celsiusTemperatureMax = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
